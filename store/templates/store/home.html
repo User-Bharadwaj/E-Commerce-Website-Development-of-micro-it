@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>E-Commerce Website</title>
+    <title>Micro IT E-Commerce</title>
 </head>
 <body>
     <h1>Welcome to Micro IT E-Commerce</h1>
     <h2>Products:</h2>
-    <ul>
+    {% if products %}
+        <ul>
         {% for product in products %}
-            <li>{{ product.name }} - ${{ product.price }}</li>
-        {% empty %}
-            <li>No products available.</li>
+            <li>
+                <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - ₹{{ product.price }}
+            </li>
         {% endfor %}
-    </ul>
+        </ul>
+    {% else %}
+        <p>No products available.</p>
+    {% endif %}
 </body>
 </html>

@@ -1,0 +1,13 @@
+<h1>Your Cart</h1>
+
+{% if cart_items %}
+    <ul>
+        {% for item in cart_items %}
+            <li>{{ item.product.name }} - ₹{{ item.product.price }} × {{ item.quantity }} = ₹{{ item.total_price }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">← Continue Shopping</a>
+{% else %}
+    <p>Your cart is empty.</p>
+    <a href="/">← Go back to Products</a>
+{% endif %}
