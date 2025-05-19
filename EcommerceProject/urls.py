@@ -3,5 +3,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('store.urls')),  # load store app urls on root
+    path('', include('store.urls')),  # Load store app on root
 ]

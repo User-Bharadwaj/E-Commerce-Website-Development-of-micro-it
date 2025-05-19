@@ -1,0 +1,32 @@
+<!-- store/templates/store/product_list.html -->
+<h1>Welcome to the Store</h1>
+
+<form method="GET" style="margin-bottom:20px;">
+    <input type="text" name="q" placeholder="Search products" value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+
+<ul>
+    {% for product in page_obj %}
+        <li>
+            {{ product.name }} - ${{ product.price }} 
+            <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+        </li>
+    {% empty %}
+        <li>No products found.</li>
+    {% endfor %}
+</ul>
+
+<div>
+    {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">Previous</a>
+    {% endif %}
+
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+    {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}{% if query %}&q={{ query }}{% endif %}">Next</a>
+    {% endif %}
+</div>
+
+<p><a href="{% url 'cart_summary' %}">View Cart</a></p>

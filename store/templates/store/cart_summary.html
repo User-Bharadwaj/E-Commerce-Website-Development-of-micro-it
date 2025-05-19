@@ -1,0 +1,17 @@
+<!-- store/templates/store/cart_summary.html -->
+<h1>Your Cart</h1>
+
+{% if cart_items %}
+    <ul>
+    {% for item in cart_items %}
+        <li>
+            {{ item.product.name }} - Quantity: {{ item.quantity }} - Subtotal: ${{ item.subtotal|floatformat:2 }}
+        </li>
+    {% endfor %}
+    </ul>
+    <p><strong>Total: ${{ total|floatformat:2 }}</strong></p>
+{% else %}
+    <p>Your cart is empty.</p>
+{% endif %}
+
+<p><a href="{% url 'product_list' %}">Continue Shopping</a></p>

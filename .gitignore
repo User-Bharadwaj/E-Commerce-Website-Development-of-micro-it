@@ -1,22 +1,6 @@
-# Ignore env file
 .env
-
-# Ignore SQLite database file
-db.sqlite3
-
-# Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
-*$py.class
-
-# Django stuff:
-*.log
-local_settings.py
-
-# VS Code files
-.vscode/
-
-# Ignore migrations except __init__.py
-store/migrations/*.pyc
-store/migrations/*.py
-!store/migrations/__init__.py
+*.pyc
+db.sqlite3
+/static/
+/media/

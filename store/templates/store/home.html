@@ -1,12 +1,19 @@
-<h1>Welcome to Micro IT E-Commerce</h1>
-<h2>Products:</h2>
-<ul>
-  {% for product in products %}
-    <li>
-      <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - ${{ product.price }}
-    </li>
-  {% empty %}
-    <li>No products available.</li>
-  {% endfor %}
-</ul>
-<a href="{% url 'cart_detail' %}">View Cart</a>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Store</title>
+</head>
+<body>
+    <h1>Welcome to the Store</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> - ₹{{ product.price }}
+                <br>{{ product.description }}
+            </li>
+        {% empty %}
+            <li>No products available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
