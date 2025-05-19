@@ -21,25 +21,3 @@ It supports product listing, search, and shopping cart features.
    ```bash
    git clone https://github.com/User-Bharadwaj/E-Commerce-Website-Development-of-micro-it.git
    cd E-Commerce-Website-Development-of-micro-it
-
- ## Project Structure
-
-E-Commerce-Website-Development-of-micro-it/
-│
-├── manage.py
-├── requirements.txt
-├── README.md
-├── ecommerce_project/ # Django project folder
-│ ├── settings.py
-│ ├── urls.py
-│ ├── wsgi.py
-│ └── asgi.py
-├── store/ # Main app folder
-│ ├── migrations/
-│ ├── templates/
-│ ├── static/
-│ ├── admin.py
-│ ├── models.py
-│ ├── views.py
-│ └── urls.py
-└── env/ # Virtual environment folder
